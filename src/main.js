@@ -4,4 +4,9 @@ let config = {
  height: 480, 
  scene: [Menu, Play]
 }
-let game = new Phaser.Game(config)
+let game = new Phaser.Game(config);
+
+//set UI sizes
+let borderUIsize = game.config.height/15;
+let borderPadding = borderUIsize/3;
+let starSpeed = 4;
