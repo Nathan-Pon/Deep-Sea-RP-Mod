@@ -11,4 +11,4 @@ let borderUIsize = game.config.height/15;
 let borderPadding = borderUIsize/3;
 let starSpeed = 4;
 
-let keyF, keyR, keyLeft, keyRight;
+let keyF, keyR, keyLEFT, keyRIGHT;

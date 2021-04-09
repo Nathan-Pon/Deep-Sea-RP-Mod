@@ -30,5 +30,6 @@ class Play extends Phaser.Scene {
      
   update () {
       this.starfield.tilePositionX -= starSpeed;
+      this.p1Rocket.update();
   }
    }
