@@ -21,6 +21,9 @@ class Play extends Phaser.Scene {
 
     this.p1Rocket = new Rocket (this, game.config.width/2, game.config.height-borderUIsize-borderPadding,'rocket').setOrigin(0.5,0); //add player 1
 
+    this. ship01 = new Spaceship (this, game.config.width + borderUIsize *6,borderUIsize * 4,'spaceship',0, 30).setOrigin(0,0)
+    this. ship02 = new Spaceship (this, game.config.width + borderUIsize *3,borderUIsize * 5,'spaceship',0, 20).setOrigin(0,0)
+    this. ship03 = new Spaceship (this, game.config.width + borderUIsize *6,borderUIsize * 4,'spaceship',0, 10).setOrigin(0,0)
     //Define Keys
     keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
     keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
@@ -31,6 +34,8 @@ class Play extends Phaser.Scene {
   update () {
       this.starfield.tilePositionX -= starSpeed;
       this.p1Rocket.update();
+      this.ship01.update()
+      this.ship02.update()
   }
    }
 
