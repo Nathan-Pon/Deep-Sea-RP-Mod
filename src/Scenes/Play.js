@@ -17,15 +17,15 @@ class Play extends Phaser.Scene {
     this.add.rectangle(0,0, game.config.width, borderUIsize * 2, 0xFFFFFF).setOrigin(0,0);
     this.add.rectangle(0,0,borderUIsize, game.config.height - borderUIsize,0xFFFFFF ).setOrigin(0,0);
     this.add.rectangle(0,0,borderUIsize, game.config.height,0xFFFFFF).setOrigin(0,0);
-    this.add.rectangle(game.config.width - borderUIsize, 0, borderUIsize, game.config.height, 0xFFFFF).setOrigin(0,0);
+    this.add.rectangle(game.config.width - borderUIsize, 0, borderUIsize, game.config.height, 0xFFFFFF).setOrigin(0,0);
 
-    this.p1Rocket = new Rocket (this, game.config.width/2,game.config.height-borderUIsize-borderPadding,'rocket').setOrigin(0.5,0); //add player 1
+    this.p1Rocket = new Rocket (this, game.config.width/2, game.config.height-borderUIsize-borderPadding,'rocket').setOrigin(0.5,0); //add player 1
 
     //Define Keys
-    keyF = this.input.keyboard.addKey (Phaser.input.Keyboard.keycodes.F);
-    keyR = this.input.keyboard.addKey (Phaser.input.Keyboard.keycodes.R);
-    keyLEFT = this.input.keyboard.addKey (Phaser.input.Keyboard.keycodes.LEFT);
-    keyRIGHT = this.input.keyboard.addKey (Phaser.input.Keyboard.keycodes.RIGHT);
+    keyF = this.input.keyboard.addKey(Phaser.input.Keyboard.keycodes.F);
+    keyR = this.input.keyboard.addKey(Phaser.input.Keyboard.keycodes.R);
+    keyLEFT = this.input.keyboard.addKey(Phaser.input.Keyboard.keycodes.LEFT);
+    keyRIGHT = this.input.keyboard.addKey(Phaser.input.Keyboard.keycodes.RIGHT);
   }
      
   update () {
@@ -33,3 +33,5 @@ class Play extends Phaser.Scene {
       this.p1Rocket.update();
   }
    }
+
+  
