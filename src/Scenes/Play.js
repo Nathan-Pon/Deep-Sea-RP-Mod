@@ -104,7 +104,7 @@ this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + bord
      explode.destroy();                   // remove explosion sprite
     });
     //update Score
-    this.p1Score.Score += ship.points;
+    this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
   }
    }
