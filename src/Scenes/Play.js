@@ -30,6 +30,8 @@ class Play extends Phaser.Scene {
     keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
     keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
     keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+ 
   }
      
   update () {
@@ -38,6 +40,29 @@ class Play extends Phaser.Scene {
       this.ship01.update();
       this.ship02.update();
       this.ship03.update();
+    
+      if(this.detectCollision(this.p1Rocket, this.ship03)) {
+        console.log('ship 03 hit');
+      }
+      if (this.detectCollision(this.p1Rocket, this.ship02)) {
+        console.log('ship 02 hit');
+      }
+      if (this.detectCollision(this.p1Rocket, this.ship01)) {
+        console.log('ship 01 hit');
+      }
+
+  }
+
+  detectCollision (rocket,ship) {
+  if(rocket.x < ship.x + ship.width && 
+    rocket.x + rocket.width > ship.x &&
+    rocket.y < ship.y + ship.height &&
+    rocket.height + rocket.y > ship.y) {
+        return true;
+    }
+    else {
+        return false;
+    }
   }
    }
 
