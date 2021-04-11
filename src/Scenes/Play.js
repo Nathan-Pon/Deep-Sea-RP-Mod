@@ -42,13 +42,19 @@ class Play extends Phaser.Scene {
       this.ship03.update();
     
       if(this.detectCollision(this.p1Rocket, this.ship03)) {
-        console.log('ship 03 hit');
+        this.p1Rocket.reset();
+        this.ship03.reset();
+       
       }
       if (this.detectCollision(this.p1Rocket, this.ship02)) {
-        console.log('ship 02 hit');
+        this.p1Rocket.reset();
+        this.ship02.reset();
+        
       }
       if (this.detectCollision(this.p1Rocket, this.ship01)) {
-        console.log('ship 01 hit');
+        this.p1Rocket.reset();
+        this.ship01.reset();
+       
       }
 
   }
