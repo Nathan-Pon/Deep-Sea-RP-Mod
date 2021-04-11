@@ -54,7 +54,7 @@ class Play extends Phaser.Scene {
   fixedWidth: 100
 
   } 
-this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, scoreConfig);
+this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, displayScore);
 
   }
  
