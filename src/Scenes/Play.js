@@ -44,8 +44,8 @@ class Play extends Phaser.Scene {
   let displayScore = {
   fontFamily: 'Courier',
   fontSize: '28px',
-  backgroundColor: 'F3B141',
-  color: '843605',
+  backgroundColor: '#F3B141',
+  color: '#843605',
   align: 'right',
   padding: {
     top: 5,
@@ -56,15 +56,30 @@ class Play extends Phaser.Scene {
   } 
 this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, displayScore);
 
+// GAME OVER flag
+this.gameOver = false;
+
+displayScore.fixedWidth = 0;
+this.clock = this.time.delayedCall (60000, () => {
+ this.add.text (game.config.width/2, game.config.height/2, 'GAME OVER', displayScore).setOrigin (0.5); 
+ this.add.text (game.config.width/2, game.config.height/2 +64, 'Press (R) to Restart', displayScore).setOrigin (0.5);
+ this.gameOver = true;
+    },null, this);
+
   }
  
   
   update () {
+    if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+      this.scene.restart();
+    }
       this.starfield.tilePositionX -= starSpeed;
+      if (!this.gameOver) {
       this.p1Rocket.update();
       this.ship01.update();
       this.ship02.update();
       this.ship03.update();
+      }
     
       if(this.detectCollision(this.p1Rocket, this.ship03)) {
         this.p1Rocket.reset();
@@ -79,7 +94,7 @@ this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + bord
         this.p1Rocket.reset();
         this.shipExplode(this.ship01);  
       }
-
+     
   }
 
   detectCollision (rocket,ship) {
