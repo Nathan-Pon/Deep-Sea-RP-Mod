@@ -37,6 +37,25 @@ class Play extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
       frameRate: 30
   });
+
+  this.p1Score = 0;  //intialize score
+
+  //display Score
+  let displayScore = {
+  fontFamily: 'Courier',
+  fontSize: '28px',
+  backgroundColor: 'F3B141',
+  color: '843605',
+  align: 'right',
+  padding: {
+    top: 5,
+    bottom: 5,
+  },
+  fixedWidth: 100
+
+  } 
+this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, scoreConfig);
+
   }
  
   
@@ -82,8 +101,11 @@ class Play extends Phaser.Scene {
     explode.on ('animationcomplete', () => {
      ship.reset();                         // reset ship position
      ship.alpha = 1;                       // make ship visible again
-     explode.destroy();                       // remove explosion sprite
+     explode.destroy();                   // remove explosion sprite
     });
+    //update Score
+    this.p1Score.Score += ship.points;
+    this.scoreLeft.text = this.p1Score;
   }
    }
 
