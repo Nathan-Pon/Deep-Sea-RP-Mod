@@ -8,9 +8,9 @@ class Play extends Phaser.Scene {
      this.load.image('starfield','./assets/starfield.png');
 
      //load audio
-     this.load.audio ('sfx_select', './assets/blip_select12.wav')
-     this.load.audio ('sfx_explosion', './assets/explosion38.wav')
-     this.load.audio ('sfx_rocket', './assets/rocket_shot.wav')
+    this.load.audio ('sfx_select', './assets/blip_select12.wav')
+    this.load.audio ('sfx_explosion', './assets/explosion38.wav')
+    this.load.audio ('sfx_rocket', './assets/rocket_shot.wav')
     
      this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});   
     }
@@ -67,7 +67,7 @@ this.gameOver = false;
 displayScore.fixedWidth = 0;
 this.clock = this.time.delayedCall (60000, () => {
  this.add.text (game.config.width/2, game.config.height/2, 'GAME OVER', displayScore).setOrigin (0.5); 
- this.add.text (game.config.width/2, game.config.height/2 +64, 'Press (R) to Restart', displayScore).setOrigin (0.5);
+ this.add.text (game.config.width/2, game.config.height/2 +64, 'Press (R) to Restart or <- for menu', displayScore).setOrigin (0.5);
  this.gameOver = true;
     },null, this);
 
@@ -78,8 +78,12 @@ this.clock = this.time.delayedCall (60000, () => {
     if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
       this.scene.restart();
     }
+    if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT))
+    {
+      this.scene.start('menuScene');
+    }
       this.starfield.tilePositionX -= starSpeed;
-      if (!this.gameOver) {
+    if (!this.gameOver) {
       this.p1Rocket.update();
       this.ship01.update();
       this.ship02.update();
