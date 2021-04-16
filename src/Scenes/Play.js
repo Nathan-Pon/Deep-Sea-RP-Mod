@@ -7,6 +7,11 @@ class Play extends Phaser.Scene {
      this.load.image('spaceship','./assets/spaceship.png');
      this.load.image('starfield','./assets/starfield.png');
 
+     //Mod Art Assets
+     this.load.image ('Harpoon', './assets/Harpoon.png');
+     this.load.image ('Orca', './assets/Orca.png');
+     this.load.image ('deepSea', './assets/deepSea.png');
+
      //load audio
     this.load.audio ('sfx_select', './assets/blip_select12.wav')
     this.load.audio ('sfx_explosion', './assets/explosion38.wav')
@@ -16,7 +21,7 @@ class Play extends Phaser.Scene {
     }
 
    create () { 
-    this.starfield =this.add.tileSprite (0,0,game.config.width,game.config.height,'starfield').setOrigin(0,0);    //place starfield
+    this.starfield =this.add.tileSprite (0,0,game.config.width,game.config.height,'deepSea').setOrigin(0,0);    //place starfield
     this.add.rectangle(0,borderUIsize + borderPadding, game.config.width, borderUIsize * 2, 0x00FF00 ).setOrigin(0,0); //green UI
     
     //white Borders
@@ -25,11 +30,11 @@ class Play extends Phaser.Scene {
     this.add.rectangle(0,0,borderUIsize, game.config.height,0xFFFFFF).setOrigin(0,0);
     this.add.rectangle(game.config.width - borderUIsize, 0, borderUIsize, game.config.height, 0xFFFFFF).setOrigin(0,0);
 
-    this.p1Rocket = new Rocket (this, game.config.width/2, game.config.height-borderUIsize-borderPadding,'rocket').setOrigin(0.5,0); //add player 1
+    this.p1Rocket = new Rocket (this, game.config.width/2, game.config.height-borderUIsize-borderPadding,'Harpoon').setOrigin(0.5,0); //add player 1
 
-    this.ship01 = new Spaceship (this, game.config.width + borderUIsize*6, borderUIsize*4,'spaceship',0, 30).setOrigin(0,0)
-    this.ship02 = new Spaceship (this, game.config.width + borderUIsize*3, borderUIsize*5 + borderPadding*2,'spaceship',0, 20).setOrigin(0,0)
-    this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'spaceship',0, 10).setOrigin(0,0)
+    this.ship01 = new Spaceship (this, game.config.width + borderUIsize*6, borderUIsize*4,'Orca',0, 30).setOrigin(0,0)
+    this.ship02 = new Spaceship (this, game.config.width + borderUIsize*3, borderUIsize*5 + borderPadding*2,'Orca',0, 20).setOrigin(0,0)
+    this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'Orca',0, 10).setOrigin(0,0)
    
     //Define Keys
     keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
