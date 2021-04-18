@@ -132,6 +132,7 @@ this.clock = this.time.delayedCall (60000, () => {
      ship.alpha = 1;                       // make ship visible again
      explode.destroy();                   // remove explosion sprite
     });
+    
     //update Score
     this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
