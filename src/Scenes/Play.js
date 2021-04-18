@@ -11,14 +11,17 @@ class Play extends Phaser.Scene {
      this.load.image ('Harpoon', './assets/Harpoon.png');
      this.load.image ('Orca', './assets/Orca.png');
      this.load.image ('deepSea', './assets/deepSea.png');
-     this.load.image ('jellyFish',  './assets/jellyFish.png');
+     this.load.image ('jellyFish', './assets/jellyFish.png');
 
      //load audio
     this.load.audio ('sfx_select', './assets/blip_select12.wav')
     this.load.audio ('sfx_explosion', './assets/explosion38.wav')
     this.load.audio ('sfx_rocket', './assets/rocket_shot.wav')
     
-     this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});   
+     this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+     
+     //Mod Spritesheet
+     this.load.spritesheet('Dissolve', './assets/Dissolve.png', {frameWidth: 96, frameHeight: 64, startFrame:0, endFrame:9});   
     }
 
    create () { 
