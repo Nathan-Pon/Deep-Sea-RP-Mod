@@ -138,6 +138,10 @@ this.clock = this.time.delayedCall (60000, () => {
     this.scoreLeft.text = this.p1Score;
     this.sound.play('sfx_explosion');
   }
+
+  displayTimer(){
+    
+  }
    }
 
   
