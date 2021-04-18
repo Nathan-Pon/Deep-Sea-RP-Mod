@@ -14,7 +14,7 @@ class Menu extends Phaser.Scene {
     fontFamily: 'Trebuchet MS',
     fontSize: '28px',
     backgroundColor: '#F3B141',
-    color: '#843605',
+    color: '#707070',
     align: 'right',
     padding: {
       top: 5,
@@ -26,7 +26,7 @@ class Menu extends Phaser.Scene {
   this.add.text(game.config.width/2, game.config.height/2 - borderUIsize - borderPadding, 'HARPOON OF THE DEEP', menuConfig).setOrigin(0.5);
   this.add.text(game.config.width/2, game.config.height/2, "Use arrows to move and (F) to Fire", menuConfig).setOrigin(0.5);
   menuConfig.backgroundColor = '#00FF00';
-  menuConfig.color = '#000';
+  menuConfig.color = '#0c2f47';
   this.add.text(game.config.width/2, game.config.height/2 + borderUIsize +
   borderPadding, 'Press <- for Novice and -> for Expert', menuConfig).setOrigin(0.5);
 
