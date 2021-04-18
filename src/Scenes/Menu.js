@@ -23,7 +23,7 @@ class Menu extends Phaser.Scene {
   fixedWidth: 0
  }
 //Menu Screen
-  this.add.text(game.config.width/2, game.config.height/2 - borderUIsize - borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+  this.add.text(game.config.width/2, game.config.height/2 - borderUIsize - borderPadding, 'HARPOON OF THE DEEP', menuConfig).setOrigin(0.5);
   this.add.text(game.config.width/2, game.config.height/2, "Use arrows to move and (F) to Fire", menuConfig).setOrigin(0.5);
   menuConfig.backgroundColor = '#00FF00';
   menuConfig.color = '#000';
