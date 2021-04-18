@@ -11,6 +11,7 @@ class Play extends Phaser.Scene {
      this.load.image ('Harpoon', './assets/Harpoon.png');
      this.load.image ('Orca', './assets/Orca.png');
      this.load.image ('deepSea', './assets/deepSea.png');
+     this.load.image ('jellyFish',  './assets/jellyFish.png');
 
      //load audio
     this.load.audio ('sfx_select', './assets/blip_select12.wav')
@@ -140,7 +141,7 @@ this.clock = this.time.delayedCall (60000, () => {
   }
 
   displayTimer(){
-    
+
   }
    }
 
