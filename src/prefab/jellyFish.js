@@ -7,7 +7,7 @@ class jellyFish extends Phaser.GameObjects.Sprite {
    
     }
     update() {
-        //move spaceship left
+        //move spaceship right
         this.x += this.moveSpeed;
        //Wrap around the screen
         if(this.x <= 0 - this.width) {
