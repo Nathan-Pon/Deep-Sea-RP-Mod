@@ -12,3 +12,10 @@ let borderPadding = borderUIsize/3;
 let starSpeed = 4;
 
 let keyF, keyR, keyLEFT, keyRIGHT;
+
+/*
+Nathan Pon
+ CMPM 120
+ RP Mod - Harpoon of the Deep
+
+*/
