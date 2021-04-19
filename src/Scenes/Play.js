@@ -20,6 +20,7 @@ class Play extends Phaser.Scene {
 
     //Mod audio
     this.load.audio ('sfx_harpoon', './assets/fireHarpoon.wav')
+    this.load.audio ('sfx_Dissolve', './assets/Bubbles2.wav')
     
      this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
      
@@ -146,7 +147,7 @@ this.clock = this.time.delayedCall (60000, () => {
     //update Score
     this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
-    this.sound.play('sfx_explosion');
+    this.sound.play('sfx_Dissolve');
   }
 
   displayTimer(){
