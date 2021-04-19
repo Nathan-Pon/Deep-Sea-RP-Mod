@@ -19,6 +19,7 @@ class Play extends Phaser.Scene {
     this.load.audio ('sfx_rocket', './assets/rocket_shot.wav')
 
     //Mod audio
+    this.load.audio ('sfx_harpoon', './assets/fireHarpoon.wav')
     
      this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
      
