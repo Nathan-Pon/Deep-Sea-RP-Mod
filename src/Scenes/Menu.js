@@ -25,7 +25,7 @@ class Menu extends Phaser.Scene {
 //Menu Screen
   this.add.text(game.config.width/2, game.config.height/2 - borderUIsize - borderPadding, 'HARPOON OF THE DEEP', menuConfig).setOrigin(0.5);
   this.add.text(game.config.width/2, game.config.height/2, "Use arrows to move and (F) to Fire", menuConfig).setOrigin(0.5);
-  menuConfig.backgroundColor = '#00FF00';
+  menuConfig.backgroundColor = '#08455e';
   menuConfig.color = '#0c2f47';
   this.add.text(game.config.width/2, game.config.height/2 + borderUIsize +
   borderPadding, 'Press <- for Novice and -> for Expert', menuConfig).setOrigin(0.5);
