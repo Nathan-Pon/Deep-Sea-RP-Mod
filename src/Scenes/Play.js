@@ -45,7 +45,7 @@ class Play extends Phaser.Scene {
     this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'Orca',0, 10).setOrigin(0,0)
    
     //Faster spaceship
-    this.jF01 = new jellyFish (this, game.config.width + borderUIsize*6, borderPadding*5,'jellyFish',0, 45).setOrigin(0,0)
+    this.jF01 = new jellyFish (this, game.config.width, borderUIsize*2 + borderPadding*3,'jellyFish',0, 45).setOrigin(0,0)
 
 
     //Define Keys
@@ -82,7 +82,7 @@ this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + bord
 this.gameOver = false;
 
 displayScore.fixedWidth = 0;
-this.clock = this.time.delayedCall (60000, () => {
+this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
  this.add.text (game.config.width/2, game.config.height/2, 'GAME OVER', displayScore).setOrigin (0.5); 
  this.add.text (game.config.width/2, game.config.height/2 +64, 'Press (R) to Restart or <- for menu', displayScore).setOrigin (0.5);
  this.gameOver = true;
@@ -159,6 +159,8 @@ this.clock = this.time.delayedCall (60000, () => {
     this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
     this.sound.play('sfx_Dissolve');
+
+
   }
 
    }
