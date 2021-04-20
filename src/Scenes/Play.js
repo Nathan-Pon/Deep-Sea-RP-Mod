@@ -30,7 +30,7 @@ class Play extends Phaser.Scene {
 
    create () { 
     this.starfield =this.add.tileSprite (0,0,game.config.width,game.config.height,'deepSea').setOrigin(0,0);    //place starfield
-    this.add.rectangle(0,borderUIsize + borderPadding, game.config.width, borderUIsize * 2, 0x00FF00 ).setOrigin(0,0); //green UI
+    this.add.rectangle(0,borderUIsize + borderPadding, game.config.width, borderUIsize * 2, 283033 ).setOrigin(0,0); //green UI
     
     //white Borders
     this.add.rectangle(0,0, game.config.width, borderUIsize * 2, 0xFFFFFF).setOrigin(0,0);
@@ -44,7 +44,8 @@ class Play extends Phaser.Scene {
     this.ship02 = new Spaceship (this, game.config.width + borderUIsize*3, borderUIsize*5 + borderPadding*2,'Orca',0, 20).setOrigin(0,0)
     this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'Orca',0, 10).setOrigin(0,0)
    
-    this.jF01 = new jellyFish (this, game.config.width, borderUIsize*6 + borderPadding*4,'jellyFish',0, -10).setOrigin(0,0)
+    //Faster spaceship
+    this.jF01 = new jellyFish (this, game.config.width + borderUIsize*4, borderPadding*5,'jellyFish',0, 45).setOrigin(0,0)
 
 
     //Define Keys
@@ -104,6 +105,7 @@ this.clock = this.time.delayedCall (60000, () => {
       this.ship01.update();
       this.ship02.update();
       this.ship03.update();
+      this.jF01.update();
       }
     
       if(this.detectCollision(this.p1Rocket, this.ship03)) {

@@ -3,12 +3,12 @@ class jellyFish extends Phaser.GameObjects.Sprite {
      super (scene,x,y, texture, frame);
      scene.add.existing(this);
      this.points = pointValue;
-     this.moveSpeed =3;
+     this.moveSpeed =6;
    
     }
     update() {
         //move spaceship right
-        this.x += this.moveSpeed;
+        this.x -= this.moveSpeed;
        //Wrap around the screen
         if(this.x <= 0 - this.width) {
             this.reset();
