@@ -14,7 +14,7 @@ class Menu extends Phaser.Scene {
     fontFamily: 'Trebuchet MS',
     fontSize: '28px',
     backgroundColor: '#F3B141',
-    color: '#707070',
+    color: '#d9e8fa',
     align: 'right',
     padding: {
       top: 5,
@@ -51,9 +51,7 @@ class Menu extends Phaser.Scene {
     gameTimer: 45000  
     }
     this.sound.play('sfx_select');
-    this.scene.start('playScene');    
-
-    
+    this.scene.start('playScene');        
   }
  }
 }
