@@ -88,8 +88,18 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
  this.gameOver = true;
     },null, this);
 
+  //Speed Increase after 30 seconds
+    this.clock = this.time.delayedCall (30000, () => {
+      this.ship01.moveSpeed = game.settings.spaceshipSpeed + 3;
+      this.ship02.moveSpeed = game.settings.spaceshipSpeed + 3;
+      this.ship03.moveSpeed = game.settings.spaceshipSpeed + 3;
+      this.jF01.moveSpeed = game.settings.spaceshipSpeed + 3;
+    },null, this);
+
+
+
   }
- 
+
   
   update () {
     if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
@@ -160,7 +170,7 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
     this.scoreLeft.text = this.p1Score;
     this.sound.play('sfx_Dissolve');
 
-
+    
   }
 
    }
