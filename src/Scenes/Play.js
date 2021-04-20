@@ -45,7 +45,7 @@ class Play extends Phaser.Scene {
     this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'Orca',0, 10).setOrigin(0,0)
    
     //Faster spaceship
-    this.jF01 = new jellyFish (this, game.config.width + borderUIsize*4, borderPadding*5,'jellyFish',0, 45).setOrigin(0,0)
+    this.jF01 = new jellyFish (this, game.config.width + borderUIsize*6, borderPadding*5,'jellyFish',0, 45).setOrigin(0,0)
 
 
     //Define Keys
@@ -121,6 +121,15 @@ this.clock = this.time.delayedCall (60000, () => {
         this.p1Rocket.reset();
         this.shipExplode(this.ship01);  
       }
+
+      if (this.detectCollision (this.p1Rocket, this.jF01)) {
+
+        this.p1Rocket.reset();
+        this.shipExplode(this.jF01);
+      }
+
+      //Speed Increase After 30 seconds
+    
      
   }
 
@@ -152,9 +161,6 @@ this.clock = this.time.delayedCall (60000, () => {
     this.sound.play('sfx_Dissolve');
   }
 
-  displayTimer(){
-
-  }
    }
 
   
