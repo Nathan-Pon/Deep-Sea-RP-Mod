@@ -45,7 +45,7 @@ class Play extends Phaser.Scene {
     this.ship03 = new Spaceship (this, game.config.width, borderUIsize*6 + borderPadding*4,'Orca',0, 10).setOrigin(0,0)
    
     //Faster spaceship
-    this.jF01 = new jellyFish (this, game.config.width, borderUIsize*2 + borderPadding*3,'jellyFish',0, 45).setOrigin(0,0)
+    this.jF01 = new jellyFish (this, game.config.width, borderUIsize*2 + borderPadding*3,'jellyFish',0, 50).setOrigin(0,0)
 
 
     //Define Keys
@@ -76,7 +76,7 @@ class Play extends Phaser.Scene {
   },
   fixedWidth: 100
 
-  } 
+} 
 
  //display Score on UI
 this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, displayScore);
@@ -122,26 +122,29 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
       this.jF01.update();
       }
     
-      if(this.detectCollision(this.p1Rocket, this.ship03)) {
+    if(this.detectCollision(this.p1Rocket, this.ship03)) {
         this.p1Rocket.reset();
         this.shipExplode(this.ship03);   
        
       }
-      if (this.detectCollision(this.p1Rocket, this.ship02)) {
+  
+    if (this.detectCollision(this.p1Rocket, this.ship02)) {
         this.p1Rocket.reset();
         this.shipExplode(this.ship02);   
       }
-      if (this.detectCollision(this.p1Rocket, this.ship01)) {
+  
+    if (this.detectCollision(this.p1Rocket, this.ship01)) {
         this.p1Rocket.reset();
         this.shipExplode(this.ship01);  
       }
 
-      if (this.detectCollision (this.p1Rocket, this.jF01)) {
+    if (this.detectCollision (this.p1Rocket, this.jF01)) {
 
         this.p1Rocket.reset();
         this.shipExplode(this.jF01);
       }
-     
+
+  
   }
 
   detectCollision (rocket,ship) {
@@ -170,8 +173,8 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
     this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
     this.sound.play('sfx_Dissolve');
-
-    
+   
+  
   }
 
    }
