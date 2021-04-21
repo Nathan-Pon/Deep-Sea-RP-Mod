@@ -61,6 +61,7 @@ class Play extends Phaser.Scene {
   });
 
   this.p1Score = 0;  //intialize score
+  
 
   //display Score
   let displayScore = {
@@ -76,6 +77,8 @@ class Play extends Phaser.Scene {
   fixedWidth: 100
 
   } 
+
+ //display Score on UI
 this.scoreLeft = this.add.text(borderUIsize + borderPadding, borderUIsize + borderPadding*2, this.p1Score, displayScore);
 
 // GAME OVER flag
@@ -96,6 +99,7 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
       this.jF01.moveSpeed = game.settings.spaceshipSpeed + 3;
     },null, this);
 
+    
 
 
   }
@@ -137,9 +141,6 @@ this.clock = this.time.delayedCall (game.settings.gameTimer, () => {
         this.p1Rocket.reset();
         this.shipExplode(this.jF01);
       }
-
-      //Speed Increase After 30 seconds
-    
      
   }
 
